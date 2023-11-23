@@ -37,14 +37,7 @@ public class PlayerHandler : MonoBehaviour
     }
     private void Update()
     {
-        currentTimer -= Time.deltaTime;
-
-        if (currentTimer < timer)
-        {
-            StartCoroutine(AutoShoot());
-            currentTimer = _timeBetweenShoot;
-        }
-
+        StartShootCoroutine();
     }
 
     private IEnumerator AutoShoot()
@@ -65,6 +58,16 @@ public class PlayerHandler : MonoBehaviour
                 yield return null;
                 break;
             }
+        }
+    }
+    private void StartShootCoroutine()
+    {
+        currentTimer -= Time.deltaTime;
+
+        if (currentTimer < timer)
+        {
+            StartCoroutine(AutoShoot());
+            currentTimer = _timeBetweenShoot;
         }
     }
 

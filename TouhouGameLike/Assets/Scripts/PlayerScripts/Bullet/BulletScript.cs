@@ -3,10 +3,13 @@ using UnityEngine.Rendering;
 
 public class BulletScript : MonoBehaviour
 {
+    [Header("Bullet settings")]
+    [SerializeField] private float _timeBeforeDestroy;
+
     private void OnEnable()
     {
         transform.GetComponent<Rigidbody2D>().WakeUp();
-        Invoke("HideBullet", 2f);
+        Invoke("HideBullet", _timeBeforeDestroy);
     }
     private void OnDisable()
     {

@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
-public class BulletScript : MonoBehaviour
+public class EnnemieBullet : MonoBehaviour
 {
     [Header("Bullet settings")]
     [SerializeField] private float _timeBeforeDestroy;
@@ -24,10 +23,10 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Player"))
         {
-            PlayerLifeDamages enemyLife = collision.GetComponent<PlayerLifeDamages>();
-            enemyLife.TakeDamage(1);
+            PlayerLifeDamages playerLife = collision.GetComponent<PlayerLifeDamages>();
+            playerLife.TakeDamage(25);
 
             gameObject.SetActive(false);
         }

@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     [Header("Assignables")]
     [SerializeField] private TextMeshProUGUI _timerText;
 
+    private bool _isWin = false;
+    private bool _antiLag = true;
+
     private float _currentTimer;
 
     private void Start()
@@ -28,6 +31,14 @@ public class GameManager : MonoBehaviour
             GameObject player = GameObject.Find("PlayerShip");
             player.GetComponent<PlayerLifeDamages>()._win = true;
             player.GetComponent<PlayerLifeDamages>()._playerWinMenu.SetActive(true);
+
+            _isWin = true;
+        }
+
+        if (_isWin && _antiLag)
+        {
+            _isWin = false;
+            _antiLag = false;
             Time.timeScale = 0.0f;
         }
     }

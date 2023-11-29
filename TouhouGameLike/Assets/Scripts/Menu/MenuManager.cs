@@ -17,19 +17,19 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(1);
     }
 
     public void SelectionLevelButton()
@@ -53,29 +53,29 @@ public class MenuManager : MonoBehaviour
 
     public void LoadSceneOne()
     {
-        SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(1);
     }
     public void LoadSceneTwo()
     {
-        SceneManager.LoadScene(2);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(2);
     }
     public void LoadSceneThree()
     {
-        SceneManager.LoadScene(3);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(3);
     }
     public void LoadSceneFour()
     {
-        SceneManager.LoadScene(4);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(4);
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()

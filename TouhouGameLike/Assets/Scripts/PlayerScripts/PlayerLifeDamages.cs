@@ -5,6 +5,7 @@ public class PlayerLifeDamages : MonoBehaviour
 {
     [Header("Player Stats")]
     [SerializeField] private float _playerMaxLifePerLevel;
+    [SerializeField] private bool _isPlayer = false;
     [Space(10)]
     [Header("Assignables")]
     [SerializeField] private Slider _playerLifeSlider;
@@ -31,9 +32,14 @@ public class PlayerLifeDamages : MonoBehaviour
     {
         _playerCurrentLife -= damage;
 
-        if (_playerCurrentLife <= 0)
+        if (_playerCurrentLife <= 0 && _isPlayer)
         {
             print("Game Over");
+        }
+        else if (_playerCurrentLife <= 0 && !_isPlayer)
+        {
+            gameObject.SetActive(false);
+            print("you Win");
         }
     }
 }
